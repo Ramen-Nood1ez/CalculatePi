@@ -1,2 +1,3 @@
 __pycache__/
 *.txt
+!digits_of_pi.txt
