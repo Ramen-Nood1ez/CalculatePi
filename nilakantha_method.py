@@ -3,10 +3,11 @@ import keyboard
 import threading, queue
 import time
 import argparse
+import numpy as np
 
 q = queue.Queue()
 
-pi = 3
+pi = np.float128(3)
 adding_mode = True
 third_digit = 4
 quitdigits = False
