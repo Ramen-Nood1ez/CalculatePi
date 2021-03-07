@@ -3,7 +3,23 @@
 name: Create Archive
 
 # Controls when the action will run. 
-on: [push, workflow_dispatch]
+on: 
+    push:
+    workflow_dispatch:
+      inputs:
+        name:
+          description: "Name of the Release"
+          required: true
+        commit:
+          decription: "Commit reference"
+          required: false
+        tag:
+          description: "Version tag"
+          required: true
+        prerelease:
+          description: "Sets if prerelease or not"
+          required: false
+          default: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
