@@ -38,8 +38,6 @@ jobs:
         with:
           filename: 'calcpi.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig nilakantha_method.py'
-          
-      - run: echo "$({ github.event.inputs.tag })"
       
       - name: Upload Release
         uses: ncipollo/release-action@v1
