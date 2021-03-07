@@ -27,4 +27,6 @@ jobs:
       
       - name: Dynamic Readme
         uses: varunsridharan/action-dynamic-readme@1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
