@@ -1,15 +1,15 @@
-from decimal import *
+from decimal import getcontext, Decimal
 import sys
-import compare_digits_of_pi as cmpi
 import argparse
 import time
+import compare_digits_of_pi as cmpi
 
 FILE_TO_SAVE_PI_TO = "pi_test.txt"
 
-numofiter = None
+NumOfIter = None
 
-tic = None
-toc = None
+Tic = None
+Toc = None
 
 parser = argparse.ArgumentParser(description="Calculate Digits of PI.")
 parser.add_argument("--iter", "-i", nargs="?", default=None,
@@ -22,7 +22,7 @@ parser.add_argument("--continuefile", "-c", nargs="?", default=None,
 
 args = parser.parse_args()
 
-numofiter = args.iter if args.iter != None else numofiter
+NumOfIter = args.iter if args.iter != None else NumOfIter
 FILE_TO_SAVE_PI_TO = args.output if args.output != None else FILE_TO_SAVE_PI_TO
 benchmark_mode = args.benchmark
 FILE_TO_CONTINUE_TO = args.continuefile
@@ -30,11 +30,11 @@ FILE_TO_CONTINUE_TO = args.continuefile
 getcontext().prec = int(args.precision) if int(args.precision) > 0 else 100
 
 def nilakantha(reps, continue_reps=2, _pi=None, _op=None):
-    global numofiter
+    global NumOfIter
     try:
-        global tic
-        global toc
-        tic = time.perf_counter()
+        global Tic
+        global Toc
+        Tic = time.perf_counter()
 
         answer = Decimal(3.0) if not _pi else _pi
         op = 1 if not _op else _op
@@ -43,7 +43,7 @@ def nilakantha(reps, continue_reps=2, _pi=None, _op=None):
             answer += 4 / Decimal(n * (n + 1) * (n + 2) * op)
             op *= -1
         
-        toc = time.perf_counter()
+        Toc = time.perf_counter()
 
         return answer
     except KeyboardInterrupt:
@@ -53,7 +53,7 @@ def nilakantha(reps, continue_reps=2, _pi=None, _op=None):
         # number of reps at
         f.write(f"{n},\n")
         # number of iterations
-        f.write(f"{numofiter},\n")
+        f.write(f"{NumOfIter},\n")
         # op mode
         f.write(f"{op}")
         f.close()
@@ -76,9 +76,9 @@ if not benchmark_mode:
 
         result = nilakantha(num_of_iter, iter_to_continue_at, pi, op_mode)
     else:
-        result = nilakantha(int(numofiter))
+        result = nilakantha(int(NumOfIter))
 
-    print(f"Completed calculations in: {toc - tic:0.4f} seconds")
+    print(f"Completed calculations in: {Toc - Tic:0.4f} seconds")
 
     f = open(FILE_TO_SAVE_PI_TO, "w")
     f.write(str(result))
@@ -90,7 +90,7 @@ else:
 
     getcontext().prec = 15
 
-    secondstook = (toc - tic)
+    secondstook = (Toc - Tic)
     print(secondstook)
-    print(f"Benchmark completed!\nCompleted 60000 iterations in {toc - tic:0.4f} seconds")
-    print(f"This computer can do about {round(60000 / (toc - tic))} iteration(s) per second")
+    print(f"Benchmark completed!\nCompleted 60000 iterations in {Toc - Tic:0.4f} seconds")
+    print(f"This computer can do about {round(60000 / (Toc - Tic))} iteration(s) per second")
