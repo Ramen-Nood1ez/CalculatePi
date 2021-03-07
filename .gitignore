@@ -1,4 +1,5 @@
 __pycache__/
 *.txt
 *.csv
+*.zip
 !digits_of_pi.txt
