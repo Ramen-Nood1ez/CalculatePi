@@ -1,3 +1,4 @@
+"""Calculates PI to the number of iterations"""
 from decimal import getcontext, Decimal
 import sys
 import argparse
@@ -6,49 +7,50 @@ import compare_digits_of_pi as cmpi
 
 FILE_TO_SAVE_PI_TO = "pi_test.txt"
 
-num_of_iter = None
+num_of_iter = None # pylint: disable=invalid-name
 
-tic = None
-toc = None
+tic = None # pylint: disable=invalid-name
+toc = None # pylint: disable=invalid-name
 
 parser = argparse.ArgumentParser(description="Calculate Digits of PI.")
 parser.add_argument("--iter", "-i", nargs="?", default=None,
     help="Set the amount of iterations you want to calculate pi to.")
 parser.add_argument("--output", "-o", nargs="?", default=None, help="Set the file to output pi to.")
 parser.add_argument("--benchmark", "-b", nargs="?", default=False, help="Sets benchmark mode on.")
-parser.add_argument("--precision", "-p", nargs="?", 
+parser.add_argument("--precision", "-p", nargs="?",
     default=100, help="Set the amount of precision.")
 parser.add_argument("--continuefile", "-c", nargs="?", default=None,
     help="Specify the file for which you want to continue calculating pi from.")
 
 args = parser.parse_args()
 
-num_of_iter = args.iter if args.iter != None else num_of_iter
-FILE_TO_SAVE_PI_TO = args.output if args.output != None else FILE_TO_SAVE_PI_TO
+num_of_iter = args.iter if args.iter is not None else num_of_iter
+FILE_TO_SAVE_PI_TO = args.output if args.output is not None else FILE_TO_SAVE_PI_TO
 benchmark_mode = args.benchmark
 FILE_TO_CONTINUE_TO = args.continuefile
 
 getcontext().prec = int(args.precision) if int(args.precision) > 0 else 100
 
 def nilakantha(reps, continue_reps=2, _pi=None, _op=None):
-    global num_of_iter
+    """Returns PI after x amount of repetitions"""
+    global num_of_iter # pylint: disable=invalid-name, global-statement
     try:
-        global tic
-        global toc
+        global tic # pylint: disable=invalid-name, global-statement
+        global toc # pylint: disable=invalid-name, global-statement
         tic = time.perf_counter()
 
         answer = Decimal(3.0) if not _pi else _pi
-        op = 1 if not _op else _op
+        op = 1 if not _op else _op # pylint: disable=invalid-name
 
-        for n in range(continue_reps, 2 * reps + 1, 2):
+        for n in range(continue_reps, 2 * reps + 1, 2): # pylint: disable=invalid-name
             answer += 4 / Decimal(n * (n + 1) * (n + 2) * op)
-            op *= -1
+            op *= -1 # pylint: disable=invalid-name
 
         toc = time.perf_counter()
 
         return answer
     except KeyboardInterrupt:
-        f = open("savedprogress.csv", "w")
+        f = open("savedprogress.csv", "w") # pylint: disable=invalid-name, redefined-outer-name
         # File pi was saved
         f.write(f"{FILE_TO_SAVE_PI_TO},\n")
         # number of reps at
