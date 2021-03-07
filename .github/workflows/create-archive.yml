@@ -45,8 +45,8 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
             artifacts: "calcpi.zip"
-            name: "$({ github.event.inputs.name })"
-            commit: "$({ github.event.inputs.commit })"
-            tag: "$({ github.event.inputs.tag })"
-            prerelease: "$({ github.event.inputs.prerelease })"
+            name: "${{ github.event.inputs.name }}"
+            commit: "${{ github.event.inputs.commit }}"
+            tag: "${{ github.event.inputs.tag }}"
+            prerelease: "${{ github.event.inputs.prerelease }}"
             token: ${{ secrets.GITHUB_TOKEN }}
