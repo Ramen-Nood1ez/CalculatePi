@@ -38,3 +38,13 @@ jobs:
         with:
           filename: 'calcpi.zip'
           exclusions: '*.git* /*node_modules/* .editorconfig nilakantha_method.py'
+      
+      - name: Upload Release
+        uses: ncipollo/release-action@v1
+        with:
+            artifacts: "calcpi.zip"
+            name: $({ github.event.inputs.name })
+            commit: $({ github.event.inputs.commit })
+            tag: $({ github.event.inputs.tag })
+            prerelease: $({ github.event.inputs.prerelease })
+            token: ${{ secrets.GITHUB_TOKEN }}
