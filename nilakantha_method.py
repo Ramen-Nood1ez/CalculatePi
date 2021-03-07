@@ -7,9 +7,9 @@ import numpy as np
 
 q = queue.Queue()
 
-pi = np.float128(3)
+pi = np.longdouble(3)
 adding_mode = True
-third_digit = 4
+third_digit = np.int64(4)
 quitdigits = False
 tic = None
 toc = None
@@ -87,14 +87,16 @@ def worker():
 
             item = q.get()
 
+            print(f"Item: {item}")
+
             if quitdigits: break
 
             if adding_mode:
                 # pi += 4 / ((third_digit - 2) * (third_digit - 1) * third_digit)
-                pi += 4 / ((item - 2) * (item - 1) * item)
+                pi += np.longdouble(4 / ((item - 2) * (item - 1) * item))
             else:
                 # pi -= 4 / ((third_digit - 2) * (third_digit - 1) * third_digit)
-                pi -= 4 / ((item - 2) * (item - 1) * item)
+                pi -= np.longdouble(4 / ((item - 2) * (item - 1) * item))
             
             adding_mode = not adding_mode
             # third_digit += 2
@@ -114,10 +116,10 @@ def worker():
 
             if adding_mode:
                 # pi += 4 / ((third_digit - 2) * (third_digit - 1) * third_digit)
-                pi += 4 / ((item - 2) * (item - 1) * item)
+                pi += np.longdouble(4 / ((item - 2) * (item - 1) * item))
             else:
                 # pi -= 4 / ((third_digit - 2) * (third_digit - 1) * third_digit)
-                pi -= 4 / ((item - 2) * (item - 1) * item)
+                pi -= np.longdouble(4 / ((item - 2) * (item - 1) * item))
             
             adding_mode = not adding_mode
             third_digit += 2
