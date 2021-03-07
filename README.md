@@ -1,3 +1,4 @@
+[![Create Archive](https://github.com/Ramen-Nood1ez/CalculatePi/actions/workflows/create-archive.yml/badge.svg)](https://github.com/Ramen-Nood1ez/CalculatePi/actions/workflows/create-archive.yml)
 # Welcome CalculatePi!
 ## How to use:
 1. Download the .zip file
