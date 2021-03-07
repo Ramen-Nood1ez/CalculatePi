@@ -24,9 +24,9 @@ class Main: # pylint: disable=too-few-public-methods
         # print(compare_pi.read())
 
         for i in enumerate(compare_pi_str):
-            if compare_pi_str[i] != correct_pi_str[i]:
-                print(f"Value incorrect at number: {i + 1}"
-                     + f"({compare_pi_str[i]} instead of {correct_pi_str[i]})")
+            if compare_pi_str[i[0]] != correct_pi_str[i[0]]:
+                print(f"Value incorrect at number: {i[0] + 1}"
+                     + f"({compare_pi_str[i[0]]} instead of {correct_pi_str[i[0]]})")
                 self.show_arrow += "^"
             else:
                 self.show_arrow += " "
