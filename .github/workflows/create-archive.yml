@@ -12,14 +12,14 @@ on:
         commit:
           decription: "Commit reference"
           required: false
-          default: true
+          default: "master"
         tag:
           description: "Version tag"
           required: true
         prerelease:
           description: "Sets if prerelease or not"
           required: false
-          default: false
+          default: "false"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
