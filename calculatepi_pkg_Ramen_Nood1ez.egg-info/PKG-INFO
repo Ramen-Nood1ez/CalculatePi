@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: calculatepi-pkg-Ramen-Nood1ez
+Version: 0.0.9
+Summary: A program that calculates pi
+Home-page: https://github.com/Ramen-Nood1ez/CalculatePi/
+Author: Ramen Nood1ez
+Author-email: 
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/Ramen-Nood1ez/CalculatePi/issues
+Description: [![Create Archive](https://github.com/Ramen-Nood1ez/CalculatePi/actions/workflows/create-archive.yml/badge.svg)](https://github.com/Ramen-Nood1ez/CalculatePi/actions/workflows/create-archive.yml)
+        [![Pylint](https://github.com/Ramen-Nood1ez/CalculatePi/actions/workflows/pylint.yml/badge.svg)](https://github.com/Ramen-Nood1ez/CalculatePi/actions/workflows/pylint.yml)
+        # Welcome CalculatePi!
+        ## How to use:
+        1. Download the .zip file
+        2. Unzip the file
+        3. Run `python3 calcpi.py`
+        
+        ### How to install using wget:
+        1. Run `wget https://github.com/Ramen-Nood1ez/CalculatePi/releases/latest/download/calcpi.zip`
+        2. Unzip `calcpi.zip`
+        3. Run `python3 calcpi.py`
+        
+        Run `python3 calcpi.py -h` to find all of the command parameters
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
