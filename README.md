@@ -7,7 +7,7 @@
 3. Run `python3 calcpi.py`
 
 ### How to install using wget:
-1. Run `wget https://github.com/Ramen-Nood1ez/CalculatePi/releases/download/v0.0.5/calcpi.zip`
+1. Run `wget https://github.com/Ramen-Nood1ez/CalculatePi/releases/latest/download/calcpi.zip`
 2. Unzip `calcpi.zip`
 3. Run `python3 calcpi.py`
 
