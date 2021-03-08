@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="calculatepi-pkg-Ramen-Nood1ez",
-    version="0.0.9",
+    version="0.0.10",
     author="Ramen Nood1ez",
     author_email="",
     description="A program that calculates pi",
