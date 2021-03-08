@@ -7,7 +7,7 @@ import compare_digits_of_pi as cmpi
 
 FILE_TO_SAVE_PI_TO = "pi_test.txt"
 
-VERSION = "0.0.6"
+VERSION = "0.0.7"
 
 num_of_iter = None # pylint: disable=invalid-name
 
@@ -84,6 +84,7 @@ if not benchmark_mode:
         result = nilakantha(int(num_of_iter))
 
     print(f"Completed calculations in: {toc - tic:0.4f} seconds")
+    print(f"Or {(toc - tic) / 60} minutes")
 
     f = open(FILE_TO_SAVE_PI_TO, "w")
     f.write(str(result))
@@ -95,7 +96,7 @@ else:
 
     getcontext().prec = 15
 
-    secondstook = (toc - tic)
-    print(secondstook)
+    # secondstook = (toc - tic)
+    # print(secondstook)
     print(f"Benchmark completed!\nCompleted 60000 iterations in {toc - tic:0.4f} seconds")
     print(f"This computer can do about {round(60000 / (toc - tic))} iteration(s) per second")
