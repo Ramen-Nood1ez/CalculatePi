@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="comparepi-pkg-Ramen-Nood1ez",
-    version="0.0.10",
+    version="0.0.11",
     author="Ramen Nood1ez",
     author_email="",
     description="A program that compares pi to a correct pi",
