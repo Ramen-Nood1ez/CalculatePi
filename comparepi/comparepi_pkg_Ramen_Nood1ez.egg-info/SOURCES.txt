@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+setup.py
+comparepi_pkg/__init__.py
+comparepi_pkg/compare_digits_of_pi.py
+comparepi_pkg_Ramen_Nood1ez.egg-info/PKG-INFO
+comparepi_pkg_Ramen_Nood1ez.egg-info/SOURCES.txt
+comparepi_pkg_Ramen_Nood1ez.egg-info/dependency_links.txt
+comparepi_pkg_Ramen_Nood1ez.egg-info/top_level.txt

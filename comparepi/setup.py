@@ -5,10 +5,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="comparepi-pkg-Ramen-Nood1ez",
-    version="0.0.9",
+    version="0.0.10",
     author="Ramen Nood1ez",
     author_email="",
-    description="A program that calculates pi",
+    description="A program that compares pi to a correct pi",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Ramen-Nood1ez/CalculatePi/",
