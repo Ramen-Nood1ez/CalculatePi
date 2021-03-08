@@ -7,6 +7,8 @@ import compare_digits_of_pi as cmpi
 
 FILE_TO_SAVE_PI_TO = "pi_test.txt"
 
+VERSION = "0.0.6"
+
 num_of_iter = None # pylint: disable=invalid-name
 
 tic = None # pylint: disable=invalid-name
